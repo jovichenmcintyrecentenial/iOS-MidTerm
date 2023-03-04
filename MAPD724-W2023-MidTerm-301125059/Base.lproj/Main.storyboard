@@ -1,24 +1,120 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xEL-zn-AGu">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Dock51.ttf">
+            <string>Dock51</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Game View Controller-->
-        <scene sceneID="tXr-a1-R10">
+        <scene sceneID="PCR-K3-L7b">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="xEL-zn-AGu" customClass="GameViewController" customModule="MAPD724_W2023_ICE_4B" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="yqN-Xn-pKG" customClass="SKView">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lives: 99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tnb-qH-VjU">
+                                <rect key="frame" x="19.999999999999993" y="44" width="95.333333333333314" height="25.333333333333329"/>
+                                <fontDescription key="fontDescription" name="Dock51" family="Dock 51" pointSize="24"/>
+                                <color key="textColor" systemColor="systemYellowColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 99999" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XQl-la-NLo">
+                                <rect key="frame" x="246" y="44" width="148" height="25.333333333333329"/>
+                                <fontDescription key="fontDescription" name="Dock51" family="Dock 51" pointSize="24"/>
+                                <color key="textColor" systemColor="systemYellowColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HrA-ov-Mbi">
+                                <rect key="frame" x="17" y="231" width="380" height="167"/>
+                                <string key="text">Play
+Mail Polit</string>
+                                <fontDescription key="fontDescription" name="Dock51" family="Dock 51" pointSize="80"/>
+                                <color key="textColor" systemColor="systemYellowColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vJA-DR-TJ1">
+                                <rect key="frame" x="132" y="433" width="150" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Start">
+                                    <fontDescription key="titleFontDescription" name="Dock51" family="Dock 51" pointSize="48"/>
+                                    <color key="baseForegroundColor" systemColor="systemYellowColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="startButtonPressEvent:" destination="xEL-zn-AGu" eventType="touchUpInside" id="pQl-Dr-4hL"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GAME OVER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kcs-AS-LJa">
+                                <rect key="frame" x="17" y="225" width="380" height="167"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="167" id="JLb-ba-j4i"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Dock51" family="Dock 51" pointSize="64"/>
+                                <color key="textColor" systemColor="systemYellowColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="68p-Pl-tSV">
+                                <rect key="frame" x="104" y="433" width="217" height="66"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Restart">
+                                    <fontDescription key="titleFontDescription" name="Dock51" family="Dock 51" pointSize="48"/>
+                                    <color key="baseForegroundColor" systemColor="systemYellowColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="endButtonPressEvent:" destination="xEL-zn-AGu" eventType="touchUpInside" id="Dz9-kt-6vF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="aSj-ru-GpG"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Kcs-AS-LJa" firstAttribute="trailing" secondItem="HrA-ov-Mbi" secondAttribute="trailing" id="4w7-bq-E8y"/>
+                            <constraint firstItem="68p-Pl-tSV" firstAttribute="leading" secondItem="aSj-ru-GpG" secondAttribute="leading" constant="104" id="5Rv-H1-Ak1"/>
+                            <constraint firstItem="tnb-qH-VjU" firstAttribute="baseline" secondItem="XQl-la-NLo" secondAttribute="baseline" id="Btk-hf-zZL"/>
+                            <constraint firstItem="XQl-la-NLo" firstAttribute="top" secondItem="aSj-ru-GpG" secondAttribute="top" id="EO8-R2-pEc"/>
+                            <constraint firstItem="vJA-DR-TJ1" firstAttribute="centerX" secondItem="HrA-ov-Mbi" secondAttribute="centerX" id="H88-wo-bbV"/>
+                            <constraint firstItem="tnb-qH-VjU" firstAttribute="top" secondItem="aSj-ru-GpG" secondAttribute="top" id="IZJ-IV-PX4"/>
+                            <constraint firstItem="68p-Pl-tSV" firstAttribute="baseline" secondItem="vJA-DR-TJ1" secondAttribute="baseline" id="IzB-76-A65"/>
+                            <constraint firstItem="tnb-qH-VjU" firstAttribute="leading" secondItem="aSj-ru-GpG" secondAttribute="leading" constant="20" id="Ks0-a5-3C7"/>
+                            <constraint firstItem="vJA-DR-TJ1" firstAttribute="centerX" secondItem="yqN-Xn-pKG" secondAttribute="centerX" id="Qko-jc-HHJ"/>
+                            <constraint firstItem="XQl-la-NLo" firstAttribute="leading" relation="lessThanOrEqual" secondItem="tnb-qH-VjU" secondAttribute="trailing" constant="146.66666666666669" id="XPx-rp-525"/>
+                            <constraint firstItem="aSj-ru-GpG" firstAttribute="bottom" secondItem="vJA-DR-TJ1" secondAttribute="bottom" constant="399" id="Yej-6x-35Y"/>
+                            <constraint firstItem="aSj-ru-GpG" firstAttribute="trailing" secondItem="68p-Pl-tSV" secondAttribute="trailing" constant="109" id="iLI-ob-6sy"/>
+                            <constraint firstItem="vJA-DR-TJ1" firstAttribute="top" secondItem="Kcs-AS-LJa" secondAttribute="bottom" constant="41" id="lQs-UT-NRE"/>
+                            <constraint firstItem="vJA-DR-TJ1" firstAttribute="centerY" secondItem="yqN-Xn-pKG" secondAttribute="centerY" id="otv-cr-r9Z"/>
+                            <constraint firstItem="vJA-DR-TJ1" firstAttribute="top" secondItem="HrA-ov-Mbi" secondAttribute="bottom" constant="35" id="tNx-8x-aS6"/>
+                            <constraint firstItem="XQl-la-NLo" firstAttribute="trailing" secondItem="aSj-ru-GpG" secondAttribute="trailing" constant="-20" id="xZI-e2-xk2"/>
+                            <constraint firstItem="Kcs-AS-LJa" firstAttribute="leading" secondItem="HrA-ov-Mbi" secondAttribute="leading" id="y6q-Wp-Axr"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="endButton" destination="68p-Pl-tSV" id="cj1-w5-LWX"/>
+                        <outlet property="endLabel" destination="Kcs-AS-LJa" id="Hzb-5K-N5d"/>
+                        <outlet property="liveLabel" destination="tnb-qH-VjU" id="0o2-Fh-OWv"/>
+                        <outlet property="scoreLabel" destination="XQl-la-NLo" id="JkA-64-YgO"/>
+                        <outlet property="startButton" destination="vJA-DR-TJ1" id="3HB-Hz-MwP"/>
+                        <outlet property="startLabel" destination="HrA-ov-Mbi" id="EJF-og-3WX"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RAc-hn-0yI" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="16.744186046511629" y="-2.5751072961373391"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
