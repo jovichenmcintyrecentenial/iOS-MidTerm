@@ -1,17 +1,21 @@
 //
-//  Ocean-landscape.swift
+//  OceanLandscape.swift
 //  MAPD724-W2023-MidTerm-301125059
 //
 //  Created by Jovi on 04/03/2023.
 //
 
-import Foundation
+import GameplayKit
+import SpriteKit
 
-class OceanLandScape:GameObject{
+
+class OceanLandscape:GameObject{
 
     
     init() {
-        super.init(imageString: "ocean-h", initalScale: 2)
+        super.init(imageString: "ocean", initalScale: 2)
+        self.zRotation = -.pi / 2
+
         start()
         reset()
     }
@@ -27,17 +31,17 @@ class OceanLandScape:GameObject{
     }
     
     override func checkBounds() {
-        if(position.y <= -2253){
+        if(position.x <= -2253){
             reset()
         }
     }
     
     override func reset() {
-        position.y = 2253
+        position.x = 2253
     }
     
     func move(){
-        self.position.y -= verticalSpeed!
+        self.position.x -= verticalSpeed!
     }
     
     required init?(coder aDecoder: NSCoder) {

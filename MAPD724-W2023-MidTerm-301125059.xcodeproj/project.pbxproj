@@ -82,7 +82,7 @@
 		9855F64529B410D500006D50 /* dock51.woff in Resources */ = {isa = PBXBuildFile; fileRef = 9855F60E29B410D500006D50 /* dock51.woff */; };
 		9855F64629B410D500006D50 /* dock51.woff2 in Resources */ = {isa = PBXBuildFile; fileRef = 9855F60F29B410D500006D50 /* dock51.woff2 */; };
 		9855F64729B410D500006D50 /* Dock51.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9855F61029B410D500006D50 /* Dock51.ttf */; };
-		9855F64A29B419B100006D50 /* OceanLandscape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9855F64929B419B100006D50 /* OceanLandscape.swift */; };
+		9855F64C29B41F4D00006D50 /* OceanLandscape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9855F64B29B41F4D00006D50 /* OceanLandscape.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -163,7 +163,7 @@
 		9855F60F29B410D500006D50 /* dock51.woff2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = dock51.woff2; sourceTree = "<group>"; };
 		9855F61029B410D500006D50 /* Dock51.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Dock51.ttf; sourceTree = "<group>"; };
 		9855F64829B410FF00006D50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		9855F64929B419B100006D50 /* OceanLandscape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OceanLandscape.swift; sourceTree = "<group>"; };
+		9855F64B29B41F4D00006D50 /* OceanLandscape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OceanLandscape.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,7 +240,7 @@
 				9855F5C729B4109F00006D50 /* Cloud.swift */,
 				9855F5C829B4109F00006D50 /* Ocean.swift */,
 				9855F5C929B4109F00006D50 /* Player.swift */,
-				9855F64929B419B100006D50 /* OceanLandscape.swift */,
+				9855F64B29B41F4D00006D50 /* OceanLandscape.swift */,
 			);
 			path = GameObjects;
 			sourceTree = "<group>";
@@ -479,6 +479,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9855F5C429B4109300006D50 /* ColliosionManager.swift in Sources */,
+				9855F64C29B41F4D00006D50 /* OceanLandscape.swift in Sources */,
 				9855F5BD29B4107F00006D50 /* GameScene.swift in Sources */,
 				9855F5CA29B4109F00006D50 /* Island.swift in Sources */,
 				9855F5BF29B4107F00006D50 /* StartScene.swift in Sources */,
@@ -489,7 +490,6 @@
 				9855F5BA29B4107F00006D50 /* EndScene.swift in Sources */,
 				9855F5D329B410B100006D50 /* GameObjectProtocol.swift in Sources */,
 				9855F59D29B40F9100006D50 /* AppDelegate.swift in Sources */,
-				9855F64A29B419B100006D50 /* OceanLandscape.swift in Sources */,
 				9855F5D429B410B100006D50 /* Layer.swift in Sources */,
 				9855F5C329B4109300006D50 /* ScoreManager.swift in Sources */,
 				9855F5CC29B4109F00006D50 /* Ocean.swift in Sources */,

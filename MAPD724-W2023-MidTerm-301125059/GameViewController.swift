@@ -9,6 +9,17 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
+class Orientation{
+    static var isPortrait = true
+    static var current: UIInterfaceOrientationMask {
+        return isPortrait ? .portrait : .landscape
+    }
+    
+    static func toggle(){
+        isPortrait = !isPortrait
+    }
+}
+
 class GameViewController: UIViewController {
     
     var currentScene:GKScene?
@@ -109,26 +120,24 @@ class GameViewController: UIViewController {
         
         setScene(sceneName: "GameScene")
         
-        
         ScoreManager.score = 0
         ScoreManager.lives = 5
         updateLivesLabel()
         updateScoreLabel()
     }
-    var x = false
+
     @IBAction func startButtonPressEvent(_ sender: Any) {
         presentGameScene()
     }
     
     private func triggerRotation(){
         DispatchQueue.main.async { [self] in
-            x = !x
+            Orientation.toggle()
                 let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
-                windowScene?.requestGeometryUpdate(.iOS(interfaceOrientations: x ? .landscapeRight : .portrait))
+            windowScene?.requestGeometryUpdate(.iOS(interfaceOrientations: Orientation.isPortrait ? .landscapeRight : .portrait))
                 self.setNeedsUpdateOfSupportedInterfaceOrientations()
             }
     }
-    
     
     @IBAction func endButtonPressEvent(_ sender: Any) {
         presentGameScene()
@@ -140,7 +149,7 @@ class GameViewController: UIViewController {
 
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         if UIDevice.current.userInterfaceIdiom == .phone {
-            return x ? .landscapeRight : .portrait
+            return Orientation.current
         } else {
             return .all
         }
