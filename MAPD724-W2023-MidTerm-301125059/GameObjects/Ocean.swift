@@ -7,6 +7,7 @@ class Ocean:GameObject{
     
     init() {
         super.init(imageString: "ocean", initalScale: 2)
+        
         start()
         reset()
     }

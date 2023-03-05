@@ -135,7 +135,11 @@ class GameViewController: UIViewController {
             Orientation.toggle()
                 let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
             windowScene?.requestGeometryUpdate(.iOS(interfaceOrientations: Orientation.isPortrait ? .landscapeRight : .portrait))
-                self.setNeedsUpdateOfSupportedInterfaceOrientations()
+                UIView.performWithoutAnimation {
+                   if #available(iOS 16.0, *) {
+                       self.setNeedsUpdateOfSupportedInterfaceOrientations()
+                   }
+                }
             }
     }
     

@@ -7,6 +7,7 @@ class Cloud:GameObject{
     
     init() {
         super.init(imageString: "cloud", initalScale: 1)
+        self.zRotation = -.pi / 2
         start()
         reset()
     }
@@ -18,7 +19,7 @@ class Cloud:GameObject{
     }
     
     override func checkBounds() {
-        if(position.y <= -932){
+        if(position.x <= -932){
             reset()
         }
     }
@@ -29,8 +30,8 @@ class Cloud:GameObject{
     }
     
     func move(){
-        self.position.y -= verticalSpeed!
-        self.position.x -= horizontalSpeed!
+        self.position.x -= verticalSpeed!
+        self.position.y -= horizontalSpeed!
     }
 
     override func reset() {
@@ -46,11 +47,11 @@ class Cloud:GameObject{
         
         //get random x position
         let randX:Int = (randomSource?.nextInt(upperBound: 524))!-262
-        position.x = CGFloat(randX)
+        position.y = CGFloat(randX)
 
         //get random y position
         let randY:Int = (randomSource?.nextInt(upperBound: 30))!+902
-        position.y = CGFloat(randY)
+        position.x = CGFloat(randY)
 
         isColliding = false
     }

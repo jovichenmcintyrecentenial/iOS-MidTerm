@@ -48,13 +48,13 @@ class GameScene: SKScene {
         
         
         //add cloud
-        for _ in 0...2 {
+        for _ in 0...1 {
             let cloud = Cloud()
             clouds.append(cloud)
             addChild(cloud)
         }
         
-        let engineSound = SKAudioNode(fileNamed: "engine.ogg")
+        let engineSound = SKAudioNode(fileNamed: "engine.mp3")
         addChild(engineSound)
         engineSound.autoplayLooped = true
         engineSound.run(SKAction.changeVolume(by: 0.5, duration: 0))

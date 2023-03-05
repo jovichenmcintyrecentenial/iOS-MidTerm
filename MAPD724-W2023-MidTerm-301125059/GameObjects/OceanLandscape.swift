@@ -22,7 +22,7 @@ class OceanLandscape:GameObject{
     
     override func start() {
         zPosition = Layer.ocean.rawValue
-        verticalSpeed = 5
+        horizontalSpeed = 5
     }
     
     override func update() {
@@ -41,7 +41,7 @@ class OceanLandscape:GameObject{
     }
     
     func move(){
-        self.position.x -= verticalSpeed!
+        self.position.x -= horizontalSpeed!
     }
     
     required init?(coder aDecoder: NSCoder) {

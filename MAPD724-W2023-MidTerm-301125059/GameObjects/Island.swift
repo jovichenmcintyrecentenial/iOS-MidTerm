@@ -7,17 +7,19 @@ class Island:GameObject{
     
     init() {
         super.init(imageString: "island", initalScale: 2)
+        self.zRotation = -.pi / 2
+
         start()
         reset()
     }
     
     override func start() {
         zPosition = Layer.island.rawValue
-        verticalSpeed = 5
+        horizontalSpeed = 5
     }
     
     override func checkBounds() {
-        if(position.y <= -876){
+        if(position.x <= -876){
             reset()
 
         }
@@ -29,14 +31,14 @@ class Island:GameObject{
     }
     
     func move(){
-        self.position.y -= verticalSpeed!
+        self.position.x -= horizontalSpeed!
     }
     
 
     override func reset() {
-        position.y = 876
+        position.x = 876
         let randX:Int = (randomSource?.nextInt(upperBound: 626))!-313
-        position.x = CGFloat(randX)
+        position.y = CGFloat(randX)
         isColliding = false
     }
 
