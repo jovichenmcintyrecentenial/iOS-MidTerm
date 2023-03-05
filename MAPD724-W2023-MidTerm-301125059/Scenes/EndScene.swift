@@ -2,8 +2,21 @@
 //  StartScene.swift
 //  MAPD724-W2023-ICE-4B
 //
-//  Created by Jovi on 08/02/2023.
+//  Mid-term exam
 //
+//  Created by Jovi on 05/03/2023.
+//
+//  NAME:
+//  Jovi Chen-Mcintyre - 301125059
+//
+//  DESCRIPTION:
+//  Simple game to deliver mail package to islands while dodging clouds
+//
+//  REVISION HISTORY:
+//  https://github.com/jovichenmcintyrecentenial/iOS-MidTerm/commits/main
+//
+//  DATE LAST MODIFIED:
+//  March 5, 2023
 
 
 import SpriteKit

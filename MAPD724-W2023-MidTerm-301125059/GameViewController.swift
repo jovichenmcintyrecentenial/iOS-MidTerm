@@ -2,15 +2,31 @@
 //  GameViewController.swift
 //  MAPD724-W2023-MidTerm-301125059
 //
-//  Created by Jovi on 04/03/2023.
+//  Mid-term exam
 //
+//  Created by Jovi on 05/03/2023.
+//
+//  NAME:
+//  Jovi Chen-Mcintyre - 301125059
+//
+//  DESCRIPTION:
+//  Simple game to deliver mail package to islands while dodging clouds
+//
+//  REVISION HISTORY:
+//  https://github.com/jovichenmcintyrecentenial/iOS-MidTerm/commits/main
+//
+//  DATE LAST MODIFIED:
+//  March 5, 2023
 
 import UIKit
 import SpriteKit
 import GameplayKit
 
+
+//class to manage orientation state
 class Orientation{
     static var isPortrait = true
+    //getter to figure which orientation is currently toggled to based on boolean
     static var current: UIInterfaceOrientationMask {
         return isPortrait ? .portrait : .landscape
     }
@@ -40,9 +56,6 @@ class GameViewController: UIViewController {
         presentStartScene()
         //init
         CollisionManager.gameViewController = self;
-
-
-
     }
     
     func updateLivesLabel(){
@@ -54,8 +67,6 @@ class GameViewController: UIViewController {
 
     }
     
-
-
     override var prefersStatusBarHidden: Bool {
         return true
     }
@@ -76,6 +87,7 @@ class GameViewController: UIViewController {
         
     }
     
+    //present Start scene
     func presentStartScene(){
         scoreLabel.isHidden = true
         liveLabel.isHidden = true
@@ -89,6 +101,7 @@ class GameViewController: UIViewController {
         setScene(sceneName: "StartScene")
     }
     
+    //present End scene
     func presentEndScene(){
         triggerRotation()
 
@@ -106,7 +119,9 @@ class GameViewController: UIViewController {
         
     }
     
+    //present Game scene
     func presentGameScene(){
+        //toogle oritentation change in
         triggerRotation()
 
         endLabel.isHidden = true
@@ -130,17 +145,24 @@ class GameViewController: UIViewController {
         presentGameScene()
     }
     
+    //trigger to toggle between portriat and landscape without animation
     private func triggerRotation(){
         DispatchQueue.main.async { [self] in
+            
+            //toggle isPortriat boolean
             Orientation.toggle()
-                let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+            
+            let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
             windowScene?.requestGeometryUpdate(.iOS(interfaceOrientations: Orientation.isPortrait ? .landscapeRight : .portrait))
+            
+                // let iOS know that it should not animate when changing orientation
                 UIView.performWithoutAnimation {
                    if #available(iOS 16.0, *) {
+                       //tell os to update because orientation changed
                        self.setNeedsUpdateOfSupportedInterfaceOrientations()
                    }
                 }
-            }
+          }
     }
     
     @IBAction func endButtonPressEvent(_ sender: Any) {
@@ -151,6 +173,7 @@ class GameViewController: UIViewController {
       return false
     }
 
+    //when orientation change force it to stick to that orientantion
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         if UIDevice.current.userInterfaceIdiom == .phone {
             return Orientation.current

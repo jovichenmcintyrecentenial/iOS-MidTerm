@@ -4,6 +4,20 @@
 //
 //  Created by Jovi on 08/02/2023.
 //
+//
+//  Mid-term exam
+//
+//  NAME:
+//  Jovi Chen-Mcintyre - 301125059
+//
+//  DESCRIPTION:
+//  Simple game to deliver mail package to islands while dodging clouds
+//
+//  REVISION HISTORY:
+//  https://github.com/jovichenmcintyrecentenial/iOS-MidTerm/commits/main
+//
+//  DATE LAST MODIFIED:
+//  March 5, 2023
 
 import SpriteKit
 import GameplayKit
@@ -47,13 +61,14 @@ class GameScene: SKScene {
         addChild(island!)
         
         
-        //add cloud
+        //add 2 clouds
         for _ in 0...1 {
             let cloud = Cloud()
             clouds.append(cloud)
             addChild(cloud)
         }
         
+        //play engine sound
         let engineSound = SKAudioNode(fileNamed: "engine.mp3")
         addChild(engineSound)
         engineSound.autoplayLooped = true
@@ -119,17 +134,18 @@ class GameScene: SKScene {
     
     
     override func update(_ currentTime: TimeInterval) {
+        
+        
         ocean1?.update()
         ocean2?.update()
         plane?.update()
         island?.update()
         
         CollisionManager.sqauredRadisCheck(scene:self, obj1: plane!, obj2: island!)
-        //cloud update
+        //cloud update and collision detection
         for cloud in clouds {
             cloud.update()
             CollisionManager.sqauredRadisCheck(scene:self, obj1: plane!, obj2: cloud)
-           
         }
         
 

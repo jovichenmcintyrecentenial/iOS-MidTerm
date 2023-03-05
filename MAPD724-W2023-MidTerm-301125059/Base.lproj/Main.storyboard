@@ -16,19 +16,19 @@
         <!--Game View Controller-->
         <scene sceneID="PCR-K3-L7b">
             <objects>
-                <viewController id="xEL-zn-AGu" customClass="GameViewController" customModule="MAPD724_W2023_ICE_4B" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="xEL-zn-AGu" customClass="GameViewController" customModule="MAPD724_W2023_MidTerm_301125059" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="yqN-Xn-pKG" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lives: 99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tnb-qH-VjU">
-                                <rect key="frame" x="19.999999999999993" y="44" width="95.333333333333314" height="25.333333333333329"/>
+                                <rect key="frame" x="19.999999999999993" y="44" width="99.333333333333314" height="25.333333333333329"/>
                                 <fontDescription key="fontDescription" name="Dock51" family="Dock 51" pointSize="24"/>
                                 <color key="textColor" systemColor="systemYellowColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 99999" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XQl-la-NLo">
-                                <rect key="frame" x="246" y="44" width="148" height="25.333333333333329"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Score: 99999" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XQl-la-NLo">
+                                <rect key="frame" x="266" y="44" width="148" height="25.333333333333329"/>
                                 <fontDescription key="fontDescription" name="Dock51" family="Dock 51" pointSize="24"/>
                                 <color key="textColor" systemColor="systemYellowColor"/>
                                 <nil key="highlightedColor"/>
@@ -91,9 +91,31 @@ Mail Polit</string>
                             <constraint firstItem="vJA-DR-TJ1" firstAttribute="top" secondItem="Kcs-AS-LJa" secondAttribute="bottom" constant="41" id="lQs-UT-NRE"/>
                             <constraint firstItem="vJA-DR-TJ1" firstAttribute="centerY" secondItem="yqN-Xn-pKG" secondAttribute="centerY" id="otv-cr-r9Z"/>
                             <constraint firstItem="vJA-DR-TJ1" firstAttribute="top" secondItem="HrA-ov-Mbi" secondAttribute="bottom" constant="35" id="tNx-8x-aS6"/>
-                            <constraint firstItem="XQl-la-NLo" firstAttribute="trailing" secondItem="aSj-ru-GpG" secondAttribute="trailing" constant="-20" id="xZI-e2-xk2"/>
+                            <constraint firstItem="XQl-la-NLo" firstAttribute="trailing" secondItem="aSj-ru-GpG" secondAttribute="trailing" id="xZI-e2-xk2"/>
+                            <constraint firstItem="XQl-la-NLo" firstAttribute="top" secondItem="aSj-ru-GpG" secondAttribute="top" constant="10" id="xop-Lm-o7L"/>
                             <constraint firstItem="Kcs-AS-LJa" firstAttribute="leading" secondItem="HrA-ov-Mbi" secondAttribute="leading" id="y6q-Wp-Axr"/>
+                            <constraint firstItem="tnb-qH-VjU" firstAttribute="top" secondItem="aSj-ru-GpG" secondAttribute="top" constant="10" id="zkd-Wo-eQ5"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="IZJ-IV-PX4"/>
+                                <exclude reference="zkd-Wo-eQ5"/>
+                                <exclude reference="EO8-R2-pEc"/>
+                                <exclude reference="xop-Lm-o7L"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=regular">
+                            <mask key="constraints">
+                                <include reference="zkd-Wo-eQ5"/>
+                                <include reference="xop-Lm-o7L"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="IZJ-IV-PX4"/>
+                                <include reference="EO8-R2-pEc"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="endButton" destination="68p-Pl-tSV" id="cj1-w5-LWX"/>
