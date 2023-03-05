@@ -43,13 +43,7 @@ class GameViewController: UIViewController {
 
     }
     
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            return .portrait
-        } else {
-            return .all
-        }
-    }
+
 
     override var prefersStatusBarHidden: Bool {
         return true
@@ -85,6 +79,8 @@ class GameViewController: UIViewController {
     }
     
     func presentEndScene(){
+        triggerRotation()
+
         scoreLabel.isHidden = true
         liveLabel.isHidden = true
         
@@ -100,6 +96,8 @@ class GameViewController: UIViewController {
     }
     
     func presentGameScene(){
+        triggerRotation()
+
         endLabel.isHidden = true
         endButton.isHidden = true
         
@@ -117,13 +115,34 @@ class GameViewController: UIViewController {
         updateLivesLabel()
         updateScoreLabel()
     }
-    
+    var x = false
     @IBAction func startButtonPressEvent(_ sender: Any) {
         presentGameScene()
+    }
+    
+    private func triggerRotation(){
+        DispatchQueue.main.async { [self] in
+            x = !x
+                let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+                windowScene?.requestGeometryUpdate(.iOS(interfaceOrientations: x ? .landscapeRight : .portrait))
+                self.setNeedsUpdateOfSupportedInterfaceOrientations()
+            }
     }
     
     
     @IBAction func endButtonPressEvent(_ sender: Any) {
         presentGameScene()
+    }
+    
+    override public var shouldAutorotate: Bool {
+      return false
+    }
+
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            return x ? .landscapeRight : .portrait
+        } else {
+            return .all
+        }
     }
 }
