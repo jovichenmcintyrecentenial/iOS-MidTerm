@@ -16,8 +16,8 @@ var screenHeight:CGFloat?
 
 class GameScene: SKScene {
     
-    var ocean1:Ocean?
-    var ocean2:Ocean?
+    var ocean1:OceanLandScape?
+    var ocean2:OceanLandScape?
     var island:Island?
     var clouds:[Cloud] = []
 
@@ -32,8 +32,8 @@ class GameScene: SKScene {
     
 
         //add ocean
-        ocean1 = Ocean()
-        ocean2 = Ocean()
+        ocean1 = OceanLandScape()
+        ocean2 = OceanLandScape()
         ocean2?.position.y = -627
         addChild(ocean1!)
         addChild(ocean2!)
